@@ -1,0 +1,36 @@
+<!!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <link rel="shortcut icon" href="{% static 'igame/img/ico/yolo.ico'%}"  />
+
+    <title>Signup </title>
+
+
+       <link href="{% static 'igame/css/bootstrap.min.css' %}" rel="stylesheet">
+      <link href="{% static 'igame/css/signup.css' %}" rel="stylesheet">
+
+
+  </head>
+
+  <body class="text-center">
+    <form class="form-signin" method="post" >
+         {% csrf_token %}
+      <img class="mb-4" src="{% static 'igame/img/girl.JPG' %}" alt="" width="72" height="72">
+        <h3>Sign up</h3>
+        <form action ="signin" method ="post">
+    	<p>Username: <input name="username" type="text" placeholder="Enter something" class="form-control" style="width: 100%"/></p>
+    	<p>Password: <input name="password" type="password" placeholder="Enter something" class="form-control" style="width: 100%"/></p>
+    	<p>Confirm Password: <input name = "confirm" type="password" placeholder="Enter something" class="form-control" style="width: 100%"/></p>
+        <button type = "submit" class="btn btn-hg btn-primary" onclick="location.href='signin'"> Submit </button>
+	    <button class="btn btn-default btn-hg">Clear</button>
+
+
+      <hr />
+      <p class="mt-5 mb-3 text-muted">&copy; 2019-2020</p>
+    </form>
+  </body>
+</html>

@@ -1,0 +1,11 @@
+#Mysql 8
+#Python 3.6
+Django==2.2
+#Blog
+pillow
+psycopg2
+django-ckeditor
+#Mysql
+pymysql
+gunicorn
+supervisor

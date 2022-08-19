@@ -1,0 +1,75 @@
+
+* {
+	
+	margin: 0;
+	padding: 0;
+
+	
+}
+
+ body {
+    height:100%;
+    width: 100%;
+    background: rgb(112, 112, 123);
+    text-align: center;
+    margin:0;
+}
+ canvas{
+    margin:0;
+    position:absolute;
+    left:0;
+    height:100%;
+    width:100%;
+}
+        
+        
+#controller{
+    font-family: "微软雅黑";
+    position: absolute;
+    margin:auto 0 ;
+    width:300px;
+    left:auto;
+    right:20px;
+    top:400px;
+    background: rgba(0,0,0,0.2);
+    border:1px dashed white;
+    border-radius: 4px;
+    padding:5px 20px;
+}
+        
+#controller h2{
+    color:white
+}
+
+#controller a{
+    color:white;
+    margin-left:10px;
+    
+ }
+
+    
+
+ .container {
+ 	
+    margin: 0;
+ 	padding: 0;
+	width: 100%;
+	height: 100%;
+	
+}
+
+
+
+
+canvas {
+	
+	margin: 0;
+	padding: 0;
+	border: 0;
+	display: block;
+	
+}
+
+
+
+

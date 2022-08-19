@@ -1,0 +1,36 @@
+{% block content %}
+            <aside class="l_side">
+          <section class="author">
+            <div class="content pure">
+              <div class="avatar">
+                <img class="avatar" src="/static/iblog/img/william.jpg"></div>
+              <div class="text">
+                <p>
+                  <span id="jinrishici-sentence">好好学习 天天向上</span></p>
+                <script src="/static/iblog/js/jinrishici.js" charset="utf-8"></script>
+              </div>
+            </div>
+          </section>
+          <section class="category">
+            <header class="pure">
+              <div>
+                <i class="fas fa-folder-open fa-fw" aria-hidden="true"></i>&nbsp;&nbsp;所有分类</div>
+            </header>
+            <div class="content pure">
+              <ul class="entry">
+                  {% for each in types %}
+                      <li>
+                  <a class="flat-box waves-effect waves-block" title="/blog/categories/cocoa-dev/" href="{% url 'blog' each.type_id %}">
+                    <div class="name">{{ each.type }}</div>
+                    <div class="badge">({{ each.type_count }})</div>
+                  </a>
+                </li>
+                  {% endfor %}
+              </ul>
+            </div>
+          </section>
+        {% include "iblog/include/OpenSource.html" %}
+        {% block contant %}
+        {% endblock %}
+        </aside>
+{% endblock %}

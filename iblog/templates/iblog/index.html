@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+  <head>
+    <title>{{ auth.username }}</title>
+    <meta charset="utf-8">
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no">
+    <link rel="shortcut icon" href="/static/iblog/img/yolo.ico">
+    <script async src="/static/iblog/js/busuanzi.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/aplayer@1.7.0/dist/APlayer.min.css">
+    <script src="/static/iblog/js/APlayer.min.js"></script>
+    <script src="/static/iblog/js/Meting.min.js"></script>
+    <link rel="stylesheet" href="/static/iblog/css/index.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5.6.3/css/all.min.css">
+      <link rel="stylesheet" href="/static/iblog/css/page.min.css">
+    <link rel="stylesheet" href="/static/iblog/highlight/styles/default.css">
+    <script src="/static/iblog/highlight/highlight.pack.js"></script>
+    <script>hljs.initHighlightingOnLoad();</script>
+    <script src="/static/iblog/js/vue.min.js"></script>
+    <script>Vue.config.productionTip = !1,
+      window.PAGE_TYPE = ""</script>
+  </head>
+
+  <body>
+    <div id="mobile-bar" class="top">
+      <a class="menu-button fas fa-bars"></a>
+      <a class="logo" href="/"></a>
+    </div>
+    <div id="header">
+      <a id="logo" href="/">
+        <img src="/static/iblog/img/christas.ico">
+        <span>{{ auth.username }}</span></a>
+      <ul id="nav">
+        <li class="nav-dropdown-container more">
+          <a class="nav-link">
+            <i class="fas fa-ellipsis-v fa-fw"></i>&nbsp;更多</a>
+          <ul class="nav-dropdown">
+            <li>
+              <ul>
+                <li>
+                  <a class="nav-link" href="rss/">
+                    <i class="fas fa-bookmark fa-fw"></i>&nbsp;RSS</a>
+                </li>
+                  <li>
+                  <a class="nav-link" target="_blank" href="{{ auth.github }}" rel="external nofollow noopener noreferrer">
+                    <i class="fab fa-github fa-fw"></i>&nbsp;GitHub</a>
+                </li>
+              </ul>
+            </li>
+          </ul>
+        </li>
+      </ul>
+    </div>
+    <div class="sidebar">
+      <div class="sidebar-inner-index">
+        <ul class="main-menu">
+          <br>
+          <h2>
+            <a href="/">{{ auth.username }}</a></h2>
+          <li class="nav-dropdown-container more">
+            <a class="nav-link">
+              <i class="fas fa-ellipsis-v fa-fw"></i>&nbsp;更多</a>
+            <ul class="nav-dropdown">
+              <li>
+                <ul>
+                  <li>
+                    <a class="nav-link" href="/rss">
+                      <i class="fas fa-bookmark fa-fw"></i>&nbsp;RSS</a>
+                  </li>
+                </ul>
+              </li>
+              <li>
+                <h4></h4>
+              </li>
+              <li>
+                <ul>
+                  <li>
+                    <a class="nav-link" target="_blank" href="{{ auth.github }}" rel="external nofollow noopener noreferrer">
+                      <i class="fab fa-github fa-fw"></i>&nbsp;GitHub</a>
+                  </li>
+                </ul>
+              </li>
+            </ul>
+          </li>
+        </ul>
+      </div>
+    </div>
+    <div id="hero">
+      <div class="inner">
+          {# 这里为头像 #}
+        <div class="left">
+          <img class="hero-logo" src="{{ auth.userimgpath }}" alt="avatar"></div>
+          {# ------------------------------------------------------ #}
+        <div class="right">
+          <h2 class="vue">{{ auth.username }}</h2>
+          <div class="home-nav">
+            <ul class="pure">
+              <li>
+                <a href="{{ auth.github }}">
+                  <i class="fas fa-flask"></i>项目</a>
+              </li>
+              <li>
+                <a href="blog">
+                  <i class="fas fa-rss"></i>博客</a>
+              </li>
+            </ul>
+            <ul class="pure">
+              <li>
+                <a href="lists">
+                  <i class="fas fa-archive"></i>归档</a>
+              </li>
+              <li>
+                <a href="about">
+                  <i class="fas fa-user"></i>关于
+                </a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="content">
+        <div class="style-example example">
+          <p>{{ auth.motto }}<br/></p>
+        </div>
+    </div>
+    <div id="posts">
+      <div class="inner">
+        <h2>TIMELINE</h2>
+        <br>
+          {% for project in pro %}
+        <div class="content with-sidebar blog post">
+          <div class="header">
+            <h3>
+              <a href="{{ project.url }}">{{ project.title }}</a></h3>
+            <h5>
+              <i class="far fa-clock"></i>&nbsp;&nbsp;{{ project.datetime|date:"Y-m-d l" }}</h5>
+          </div>
+            {{ project.detail | safe}}
+          <a href="{{ project.url }}">[查看详情]</a></div>
+          {% endfor %}
+          </div>
+      </div>
+    </div>
+    <script>!
+      function() {
+        var e = !1;
+        window.addEventListener("scroll",
+        function() {
+          165 < window.pageYOffset && !e ? (e = !0, document.getElementById("mobile-bar").classList.remove("top")) : window.pageYOffset <= 165 && e && (e = !1, document.getElementById("mobile-bar").classList.add("top"))
+        })
+      } ()</script>
+    {% include "iblog/include/footers.html" %}
+    {% block footer %}
+    {% endblock %}
+    <script src="/static/iblog/js/common.js"></script>
+    <script src="/static/iblog/js/fastclick.min.js"></script>
+    <script>document.addEventListener("DOMContentLoaded",
+      function() {
+        FastClick.attach(document.body)
+      },
+      !1)</script>
+  </body>
+
+</html>
